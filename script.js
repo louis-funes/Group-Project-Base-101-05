@@ -1,15 +1,27 @@
 
 // Function that fecths the URL
+
+
+
 async function gettingURL(){
-  const queryURL= "https://api.si.edu/openaccess/api/v1.0/search?q=";
-  const rowNumber = "5"
-  const search_name = "ota";
+  const topicName = document.getElementById("search").value;
+
+  const rowNumber = document.getElementById("rows#").value;
+
+
+  const queryURL= `https://api.si.edu/openaccess/api/v1.0/search?q=${topicName}&rows=${rowNumber}`;
+    
+
+
   const api_key = "EmJdH60tNih9rYDose9Icg92QjX1LQF9Y2LBeZh5";
-  const response = await fetch( queryURL + search_name + "&rows=" + rowNumber + "&api_key=" + api_key);
+  const response = await fetch( queryURL + "&api_key=" + api_key);
   //converting to json
   const data = await response.json();
   
   const gettingrows = await data.response["rows"];
+
+
+
    
   // lenght of the data 
   var arrayLenght = gettingrows.length;
@@ -52,8 +64,13 @@ async function gettingURL(){
     
 }
 
+
+
+
+
 // Calling the function fetching
-gettingURL();
+gettingURL(); 
+
 
 
 
