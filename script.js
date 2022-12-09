@@ -62,7 +62,7 @@ async function xl() {
   data: {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
     datasets: [{
-      label: 'Articles selected (Order by date)s',
+      label: 'Articles selected (Order by date = Oldest to Recent)',
       data: [12, 19, 3, 5, 2, 3],
       borderWidth: 1
     }]
