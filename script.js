@@ -54,7 +54,7 @@ async function gettingURL() {
 }
 
 
-async function xl() {
+function xl() {
   
   const ctx = document.getElementById('chart');
   new Chart(ctx, {
