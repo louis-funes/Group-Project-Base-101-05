@@ -1,5 +1,31 @@
+
 // Function that fecths the UR
+
+
+async function getChart(){
+  const dataChart = await gettingURL();
+  const ctx = document.getElementById('chart');
+  const myChart = new Chart(ctx, {
+   type: 'line',
+   data: {
+     labels: dataChart.prueba, 
+     datasets: [{
+       
+      label: 'Articles selected (Order by date = Oldest to Recent)',
+       data: dataChart.yprueba,
+       fill:false,
+       borderWidth: 1
+     }]
+   },
+
+ });
+}
+
+
+
 async function gettingURL() {
+  prueba = [];
+  yprueba = [];
   const topicName = document.getElementById('search').value;
 
   const rowNumber = document.getElementById('rows#').value;
@@ -21,15 +47,19 @@ async function gettingURL() {
   const arrayCounter = document.getElementById('arrCoun');
 
   for (let i = 0; i < arrayLenght; i++) {
-    console.log(gettingrows[i].title);
-
-    console.log(
-      gettingrows[i].content.descriptiveNonRepeating.record_link
-    );
+    
 
     const gettingTitle = gettingrows[i].title;
 
     const gettinLinks = gettingrows[i].content.descriptiveNonRepeating.record_link;
+
+    const gettingYear = gettingrows[i].content.freetext.date[0]["content"];
+    
+    console.log(gettingTitle);
+    console.log(gettingrows[i])
+    console.log(gettingYear);
+    
+    
 
     // storing and selecting the data
     const span = document.createElement('a');
@@ -41,34 +71,52 @@ async function gettingURL() {
     // appending to the findit variable
     span.textContent = gettingTitle;
     findit.append(span);
+
+    // probando eliminar
+    prueba.push(gettingTitle);
+    yprueba.push(gettingYear);
   }
   const gettingLenghtArticles = arrayLenght;
   const article = ' articles';
-  arrayCounter.append(gettingLenghtArticles, article);
+  arrayCounter.append(gettingLenghtArticles, article); 
+  return {yprueba, prueba}; 
 }
 
-function articleChart() {
-  const ctx = document.getElementById('chart');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: 'Articles selected (Order by date = Oldest to Recent)',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
-}
+
+
+
+
+
+
+
+
+
+
+// function articleChart() {
+  
+//   const ctx = document.getElementById('chart');
+//   new Chart(ctx, {
+//     type: 'bar',
+//     data: {
+//       labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//       datasets: [{
+//         label: 'Articles selected (Order by date = Oldest to Recent)',
+//         data: [12, 19, 3, 5, 2, 3],
+//         borderWidth: 1
+//       }]
+//     },
+//     options: {
+//       scales: {
+//         y: {
+//           beginAtZero: true
+//         }
+//       }
+//     }
+//   });
+// }
 
 // Calling the function fetching
-gettingURL();
-articleChart();
+
+
+
+getChart();
