@@ -1,25 +1,21 @@
-
 // Function that fecths the UR
 
-
-async function getChart(){
+async function getChart() {
   const dataChart = await gettingURL();
   const ctx = document.getElementById('chart');
   const myChart = new Chart(ctx, {
-   type: 'doughnut',
-   data: {
-     labels: dataChart.prueba, 
-     datasets: [{
-      label: 'Articles selected (Order by date = Oldest to Recent)',
-      data: dataChart.yprueba,
-      borderWidth: 1
-     }]
-   },
+    type: 'doughnut',
+    data: {
+      labels: dataChart.prueba,
+      datasets: [{
+        label: 'Articles selected (Order by date = Oldest to Recent)',
+        data: dataChart.yprueba,
+        borderWidth: 1
+      }]
+    }
 
- });
+  });
 }
-
-
 
 async function gettingURL() {
   prueba = [];
@@ -45,13 +41,11 @@ async function gettingURL() {
   const arrayCounter = document.getElementById('arrCoun');
 
   for (let i = 0; i < arrayLenght; i++) {
-    
-
     const gettingTitle = gettingrows[i].title;
 
     const gettinLinks = gettingrows[i].content.descriptiveNonRepeating.record_link;
 
-    const gettingYear = gettingrows[i].content.freetext.date[0]["content"];
+    const gettingYear = gettingrows[i].content.freetext.date[0].content;
 
     // storing and selecting the data
     const span = document.createElement('a');
@@ -64,14 +58,14 @@ async function gettingURL() {
     span.textContent = gettingTitle;
     findit.append(span);
 
-    // probando eliminar
+    // getting push to the local variables
     prueba.push(gettingTitle);
     yprueba.push(gettingYear);
   }
   const gettingLenghtArticles = arrayLenght;
   const article = ' articles';
-  arrayCounter.append(gettingLenghtArticles, article); 
-  return {yprueba, prueba}; 
+  arrayCounter.append(gettingLenghtArticles, article);
+  return {yprueba, prueba};
 }
 
 getChart();

@@ -20,7 +20,7 @@ body {
 .container {
   margin-top: 10px;
   margin-right: 10px;
-  margin-bottom: 135px;
+  margin-bottom: 40px;
   margin-left: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -59,7 +59,7 @@ body {
 
 
 .footer {
-  margin: 3px 4px;
+  margin: 25px 4px 6px 4px;
   padding: 0.4rem 0.4rem 0.4rem 0.4rem;
   flex-shrink: 0;
   background-color: rgba(152, 188, 210, 0.828);
