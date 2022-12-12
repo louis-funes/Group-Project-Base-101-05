@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Project 101-05</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 
     <body>
@@ -37,14 +39,14 @@
                                 <input id="rows#" type="text" class="input" placeholder="number of articles"/>  
                                 </br>
                                 </br>
-                                <button type="button" id="submit" onclick="gettingURL()">Submit</button>
+                                <button type="button" id="submit" onclick="getChart()">Submit</button>
                                 <button id="clear">clear</button>                              
                             </form>
                         
                         </div>
 
-
-                        
+                        <!-- #space between  -->
+                        <div class="boxData"></div>
 
 
                         <!-- #Box Data -->
@@ -52,16 +54,18 @@
                             
                             <!-- <a class="boxData" id="idtest"></a>  -->
 
-                            <ul class="boxData" id="idtest">
-
-                            </ul>
+                            <ul class="boxData" id="idtest"> </ul>
                             
 
                             <h2 id="arrCoun">There is </h2>  
                         </div>
 
 
+                    </div>
 
+                    <!-- #Graph -->
+                    <div class="box"  >
+                            <canvas id="chart" height="500" width="800" display: flex></canvas>             
                     </div>
 
             <div>
