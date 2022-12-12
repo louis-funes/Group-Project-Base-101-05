@@ -1,11 +1,18 @@
-#Project Name: Explore articles from the API Smithsonian with date visualization.
+# Project Name: Explore articles from the API Smithsonian with date visualization.
+# Author's name: Louis Funes
+### Table of content
+Please use wisely
+
+- [Introduction](#introduction)
+- [Description](#description)
 
 ## Introduction 
-•	Github Link Pages site.
+- Github Link Pages site.
 https://louis-funes.github.io/Group-Project-Base-101-05/
-•	Title project
+
+- Title project
 Explore articles from the API Smithsonian.
-•	Description of target browsers (iOS? Android? Which ones? Which versions?)
+- Description of target browsers (iOS? Android? Which ones? Which versions?)
 So far, the application is for web browser, but it can be used by any smartphone device. The only issue right now is that the coding is designed for browser. Nevertheless, the coding for tablets and devices can be created on CSS so the information adjusts according to the display that the user is using. 
 
 
