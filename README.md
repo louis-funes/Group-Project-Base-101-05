@@ -1,5 +1,5 @@
 # Project Name: Explore articles from the API Smithsonian with date visualization.
-# Authot name: Louis Funes
+# Author's name: Louis Funes
 ### Table of content
 Please use wisely
 
